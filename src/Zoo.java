@@ -13,8 +13,10 @@ public class Zoo {
         this.name = name;
         this.city = city;
         this.nbrCages = nbrCages;
+
         this.animals = new ArrayList<>();
         this.animalCompteur = 0; // Initialiser
+
     }
 
     public void displayZoo() {
@@ -40,7 +42,7 @@ public class Zoo {
         }
          */
         System.out.println("Animaux dans le zoo :");
-        for (Animal animal : animals) {
+        for (Animal animal : animals) { //Boucle for avancé: for-each
             System.out.println(animal.name);
         }
     }
@@ -57,6 +59,32 @@ public class Zoo {
              */
             return animals.indexOf(animal);
     }
+
+    public boolean isZooFull() {
+        return animals.size() >= nbrCages; //true: super full .. false: still there's places
+    }
+
+    public int getAnimalCount() {
+        return animals.size();
+    }
+
+    public static Zoo compareZoos(Zoo zoo1, Zoo zoo2) {
+
+        int animalCount1 = zoo1.getAnimalCount();
+        int animalCount2 = zoo2.getAnimalCount();
+
+        if (animalCount1 > animalCount2) {
+            return zoo1;
+        } else {
+            return zoo2;
+        }
+    }
+
+    public String getName() {
+        return name;
+    }
+
+
 
 
 }

@@ -85,6 +85,29 @@ public class ZooManagement {
             System.out.println("Lion 2 non trouvé.");
         }
 
+        // Prosit 3 //To test the methods I did
+        Zoo zoo1 = new Zoo("Zoo 1", "Ville 1", 25); // I shouldn't add the 3rd param
+        Zoo zoo2 = new Zoo("Zoo 2", "Ville 2", 25); //cause it is a constant .. final ..
+
+        // Création d'animaux
+        Animal lion3 = new Animal("YYY", "Lion", 22, true);
+        Animal elephant = new Animal("EEE", "Elephant", 33, true);
+        Animal giraffe = new Animal("GGG", "Giraffe", 8, false);
+
+        // Ajout d'animaux au zoo
+        zoo1.addAnimal(lion3);
+        zoo1.addAnimal(elephant);
+
+        zoo2.addAnimal(giraffe);
+
+        // Vérification si les zoo sont pleins
+        System.out.println("Zoo 1 est plein : " + zoo1.isZooFull()); // It should be false
+        System.out.println("Zoo 2 est plein : " + zoo2.isZooFull()); // It should be false too
+
+        // Comparaison des zoo
+        Zoo zooWithMostAnimals = Zoo.compareZoos(zoo1, zoo2);
+        System.out.println("Le zoo avec le plus d'animaux est : " + zooWithMostAnimals.getName());
+
 
         scanner.close();
     }
