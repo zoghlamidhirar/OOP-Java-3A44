@@ -1,3 +1,7 @@
+package tn.esprit.gestionzoo.main;
+
+import tn.esprit.gestionzoo.entities.Animal;
+import tn.esprit.gestionzoo.entities.Zoo;
 
 import java.util.Scanner;
 
@@ -16,8 +20,8 @@ public class ZooManagement {
         System.out.println(zooName + " comporte " + nbrCages + " cages ");
 
 
-        Animal lion = new Animal("Fel", "Lion", 5, true);
-        Animal lion1 = new Animal("Fel1", "Lion", 5, true);
+        Animal lion = new Animal("Fel","Lion",5,true);
+        Animal lion1 = new Animal("Feld","Liond",5,true);
 
 
         Zoo myZoo = new Zoo("Mon zoo", "Ma ville", 25);
@@ -53,19 +57,19 @@ public class ZooManagement {
         //myZoo.animals[0] = lion;
 
         // Affichage d'informations sur l'animal et le zoo
-        //System.out.println("Animal créé : " + lion.name);
-        //System.out.println("Zoo créé : " + myZoo.name);
+        //System.out.println("tn.esprit.gestionzoo.entities.Animal créé : " + lion.name);
+        //System.out.println("tn.esprit.gestionzoo.entities.Zoo créé : " + myZoo.name);
  */
 
         /*
         // Recherche
-        Animal AnimalX = new Animal("XXX", "Tiger", 2, true);
+        tn.esprit.gestionzoo.entities.Animal AnimalX = new tn.esprit.gestionzoo.entities.Animal("XXX", "Tiger", 2, true);
         int index = myZoo.searchAnimal(AnimalX);
 
         if (index != -1) {
-            System.out.println("Animal trouvé à l'indice: " + index);
+            System.out.println("tn.esprit.gestionzoo.entities.Animal trouvé à l'indice: " + index);
         } else {
-            System.out.println("Animal non trouvé!!");
+            System.out.println("tn.esprit.gestionzoo.entities.Animal non trouvé!!");
         }
          */
 
@@ -86,8 +90,8 @@ public class ZooManagement {
         }
 
         // Prosit 3 //To test the methods I did
-        Zoo zoo1 = new Zoo("Zoo 1", "Ville 1", 25); // I shouldn't add the 3rd param
-        Zoo zoo2 = new Zoo("Zoo 2", "Ville 2", 25); //cause it is a constant .. final ..
+        Zoo zoo1 = new Zoo("tn.esprit.gestionzoo.entities.Zoo 1", "Ville 1", 25); // I shouldn't add the 3rd param
+        Zoo zoo2 = new Zoo("tn.esprit.gestionzoo.entities.Zoo 2", "Ville 2", 25); //cause it is a constant .. final ..
 
         // Création d'animaux
         Animal lion3 = new Animal("YYY", "Lion", 22, true);
@@ -101,8 +105,8 @@ public class ZooManagement {
         zoo2.addAnimal(giraffe);
 
         // Vérification si les zoo sont pleins
-        System.out.println("Zoo 1 est plein : " + zoo1.isZooFull()); // It should be false
-        System.out.println("Zoo 2 est plein : " + zoo2.isZooFull()); // It should be false too
+        System.out.println("tn.esprit.gestionzoo.entities.Zoo 1 est plein : " + zoo1.isZooFull()); // It should be false
+        System.out.println("tn.esprit.gestionzoo.entities.Zoo 2 est plein : " + zoo2.isZooFull()); // It should be false too
 
         // Comparaison des zoo
         Zoo zooWithMostAnimals = Zoo.compareZoos(zoo1, zoo2);
