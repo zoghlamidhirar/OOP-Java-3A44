@@ -114,22 +114,38 @@ public class ZooManagement {
         Zoo zooWithMostAnimals = Zoo.compareZoos(zoo1, zoo2);
         System.out.println("Le zoo avec le plus d'animaux est : " + zooWithMostAnimals.getName());
 
-        Aquatic aqua1 = new Aquatic();
+        //Aquatic aqua1 = new Aquatic();
         Dolphin dol1 = new Dolphin();
         Penguin penn = new Penguin();
 
-        Aquatic aqua2 = new Aquatic("AquaticFamily", "AquaticAnimal", 10, true, "AquaticHabitat");
+        //Aquatic aqua2 = new Aquatic("AquaticFamily", "AquaticAnimal", 10, true, "AquaticHabitat");
         Dolphin dol2 = new Dolphin("DolphinFamily", "Dolphin", 5, true, "Ocean", 20.0f);
         Penguin penn2 = new Penguin("PenguinFamily", "Penguin", 3, true, "Antarctica", 10.0f);
 
         // Print the objects
-        System.out.println(aqua2);
+        //System.out.println(aqua2);
         System.out.println(dol2);
         System.out.println(penn2);
 
-        aqua2.swim();
+        //aqua2.swim();
         dol2.swim();
         penn2.swim();
+
+        Zoo myZoo2 = new Zoo("Zooooo","Tunis",25);
+
+
+        Aquatic penguin1 = new Penguin();
+        Aquatic dolphin1 = new Dolphin();
+
+        myZoo2.addAquaticAnimal(penguin1);
+        myZoo2.addAquaticAnimal(dolphin1);
+
+
+        for (Aquatic animal : myZoo2.aquaticAnimals) {
+            if (animal != null) {
+                animal.swim();
+            }
+        }
 
 
         scanner.close();
