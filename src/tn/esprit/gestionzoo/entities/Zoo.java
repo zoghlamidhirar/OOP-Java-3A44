@@ -62,7 +62,7 @@ public class Zoo {
         System.out.println("Nombre de cages : " + nbrCages);
     }
 
-    public boolean addAnimal(Animal animal) {
+    public void addAnimal(Animal animal) throws ZooFullException, InvalidAgeException {
         /*
         if (!animals.contains(animal) && animals.size() < nbrCages) { //making sure that the animall is uniquely added
             animals.add(animal);
@@ -70,13 +70,45 @@ public class Zoo {
         } else {
             return false;
         }
-         */
+
+
+
         if (!isZooFull()) {
             animals.add(animal);
             return true; // Ajout réussi
         } else {
             return false; // Le zoo est plein
         }
+        */
+
+
+        /*
+        if (animal.getAge() < 0) {
+            throw new InvalidAgeException("L'âge de l'animal ne peut pas être négatif.");
+        }
+
+        if (animalCompteur < maxCages) {
+            this.animals.set(animalCompteur, animal);
+            animalCompteur++;
+        }
+         */
+        int maxCages=nbrCages;
+        if (animal.getAge() < 0) {
+            try {
+                throw new InvalidAgeException("L'âge de l'animal ne peut pas être négatif.");
+            } catch (InvalidAgeException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+        if (animalCompteur < maxCages) {
+            animals.set(animalCompteur, animal);
+            animalCompteur++;
+        } else {
+            throw new ZooFullException("Le zoo est plein. Impossible d'ajouter plus d'animaux.");
+        }
+
     }
 
     public void displayAnimals() {

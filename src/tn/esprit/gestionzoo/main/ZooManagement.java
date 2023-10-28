@@ -33,19 +33,44 @@ public class ZooManagement {
         Animal penguin = new Animal("Pen", "Penguin", 10, true);
 
         // Ajout d'animaux au zoo
+        /*
         boolean ajoutLion = myZoo.addAnimal(lion);
         boolean ajoutLion1 = myZoo.addAnimal(lion1);
         boolean ajoutPig = myZoo.addAnimal(pig);
         boolean ajoutPenguin = myZoo.addAnimal(penguin);
+        */
+        try {
+            myZoo.addAnimal(lion);
+        } catch (ZooFullException | InvalidAgeException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            myZoo.addAnimal(lion1);
+        } catch (ZooFullException | InvalidAgeException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            myZoo.addAnimal(pig);
+        } catch (ZooFullException | InvalidAgeException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            myZoo.addAnimal(penguin);
+        } catch (ZooFullException | InvalidAgeException e) {
+            throw new RuntimeException(e);
+        }
+
 
         //Affichage des animaux àà travers la méthode displayAnimals()
         myZoo.displayAnimals();
 
-        // Affichage des résultats
+        /*
+         Affichage des résultats
         System.out.println("Ajout du pig au zoo : " + ajoutPig);
         System.out.println("Ajout de penguin au zoo : " + ajoutPenguin);
+         Afficher les informations du zoo en utilisant la méthode displayZoo()
+        */
 
-        // Afficher les informations du zoo en utilisant la méthode displayZoo()
         myZoo.displayZoo();
 
         // Afficher le zoo directement avec System.out.println()
@@ -101,10 +126,22 @@ public class ZooManagement {
         Animal giraffe = new Animal("GGG", "Giraffe", 8, false);
 
         // Ajout d'animaux au zoo
-        zoo1.addAnimal(lion3);
-        zoo1.addAnimal(elephant);
+        try {
+            zoo1.addAnimal(lion3);
+        } catch (ZooFullException | InvalidAgeException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            zoo1.addAnimal(elephant);
+        } catch (ZooFullException | InvalidAgeException e) {
+            throw new RuntimeException(e);
+        }
 
-        zoo2.addAnimal(giraffe);
+        try {
+            zoo2.addAnimal(giraffe);
+        } catch (ZooFullException | InvalidAgeException e) {
+            throw new RuntimeException(e);
+        }
 
         // Vérification si les zoo sont pleins
         System.out.println("tn.esprit.gestionzoo.entities.Zoo 1 est plein : " + zoo1.isZooFull()); // It should be false
