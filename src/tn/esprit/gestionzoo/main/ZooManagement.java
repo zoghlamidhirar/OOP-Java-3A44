@@ -5,6 +5,9 @@ import tn.esprit.gestionzoo.entities.Zoo;
 
 import tn.esprit.gestionzoo.entities.*;
 
+import tn.esprit.gestionzoo.interfaces.*;
+import tn.esprit.gestionzoo.enums.Food;
+
 import java.util.Scanner;
 
 public class ZooManagement {
@@ -39,6 +42,8 @@ public class ZooManagement {
         boolean ajoutPig = myZoo.addAnimal(pig);
         boolean ajoutPenguin = myZoo.addAnimal(penguin);
         */
+
+        /*
         try {
             myZoo.addAnimal(lion);
         } catch (ZooFullException | InvalidAgeException e) {
@@ -64,6 +69,8 @@ public class ZooManagement {
         //Affichage des animaux àà travers la méthode displayAnimals()
         myZoo.displayAnimals();
 
+         */
+
         /*
          Affichage des résultats
         System.out.println("Ajout du pig au zoo : " + ajoutPig);
@@ -71,7 +78,7 @@ public class ZooManagement {
          Afficher les informations du zoo en utilisant la méthode displayZoo()
         */
 
-        myZoo.displayZoo();
+        //myZoo.displayZoo();
 
         // Afficher le zoo directement avec System.out.println()
         System.out.println(myZoo);
@@ -125,6 +132,7 @@ public class ZooManagement {
         Animal elephant = new Animal("EEE", "Elephant", 33, true);
         Animal giraffe = new Animal("GGG", "Giraffe", 8, false);
 
+        /*
         // Ajout d'animaux au zoo
         try {
             zoo1.addAnimal(lion3);
@@ -142,6 +150,9 @@ public class ZooManagement {
         } catch (ZooFullException | InvalidAgeException e) {
             throw new RuntimeException(e);
         }
+
+
+         */
 
         // Vérification si les zoo sont pleins
         System.out.println("tn.esprit.gestionzoo.entities.Zoo 1 est plein : " + zoo1.isZooFull()); // It should be false
@@ -183,6 +194,22 @@ public class ZooManagement {
                 animal.swim();
             }
         }
+
+        // Create an instance of Aquatic
+        Aquatic aquaticAnimal = new Aquatic("AquaticFamily", "AquaticAnimal", 10, true, "AquaticHabitat");
+
+        // Test the eatMeat method with Carnivore interface
+        System.out.println("Testing eatMeat method:");
+        aquaticAnimal.eatMeat(Food.MEAT); // This should print "This aquatic animal is eating meat."
+        aquaticAnimal.eatMeat(Food.PLANT); // This should print "This aquatic animal does not eat meat."
+
+        // Create an instance of Terrestrial
+        Terrestrial terrestrialAnimal = new Terrestrial("TerrestrialFamily", "TerrestrialAnimal", 8, true, 4);
+
+        // Test the eatPlantAndMeat method with Omnivore interface
+        System.out.println("\nTesting eatPlantAndMeat method:");
+        terrestrialAnimal.eatPlantAndMeat(Food.BOTH); // This should print "This terrestrial animal is eating both plants and meat."
+        terrestrialAnimal.eatPlantAndMeat(Food.MEAT); // This should print "This terrestrial animal does not eat both plants and meat."
 
 
         scanner.close();
