@@ -2,7 +2,7 @@ package entities;
 
 import java.util.Objects;
 
-public class Departement {
+public class Departement implements Comparable<Departement> {
     private int id;
     private String nomDepartement;
     private int nbreEmploye;
@@ -56,4 +56,8 @@ public class Departement {
         return id == that.id && nbreEmploye == that.nbreEmploye && Objects.equals(nomDepartement, that.nomDepartement);
     }
 
+    @Override
+    public int compareTo(Departement o) {
+        return 0;
+    }
 }

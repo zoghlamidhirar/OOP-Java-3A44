@@ -94,6 +94,33 @@ public class Main {
 
 */
 
+        Employe emp1 = new Employe(101, "JJJ DDD");
+        Employe emp2 = new Employe(102, "III SSS");
+        Departement depp1 = new Departement(1, "IT", 50);
+        Departement depp2 = new Departement(2, "HR", 30);
+
+        AffectationHashMap affectationHashMap = new AffectationHashMap();
+
+        affectationHashMap.ajouterEmployeDepartement(emp1, depp1);
+        affectationHashMap.ajouterEmployeDepartement(emp2, depp2);
+
+        affectationHashMap.afficherEmployesEtDepartements();
+
+        affectationHashMap.supprimerEmploye(emp1);
+
+        affectationHashMap.supprimerEmployeEtDepartement(emp2, depp2);
+
+        affectationHashMap.afficherEmployes();
+
+        affectationHashMap.afficherDepartements();
+
+        affectationHashMap.ajouterEmployeDepartement(emp1, depp1);
+        affectationHashMap.ajouterEmployeDepartement(emp1, depp2);
+
+        affectationHashMap.afficherEmployesEtDepartements();
+
+        System.out.println("Rechercher employé emp1 : " + affectationHashMap.rechercherEmploye(emp1));
+
 
 
     }

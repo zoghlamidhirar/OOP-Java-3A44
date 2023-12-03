@@ -9,6 +9,11 @@ public class Employe {
     private String nomDepartement;
     private int grade;
 
+    public Employe(int i, String j) {
+        this.id=i;
+        this.nom=j;
+    }
+
     public int getId() {
         return id;
     }
